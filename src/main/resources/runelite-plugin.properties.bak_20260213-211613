@@ -1,5 +1,0 @@
-displayName=Nyami Bank State
-author=thealiamalia
-description=Expose bank open/closed state to localhost for NyamiLocal
-tags=nyami,bank,overlay,http
-plugins=com.nyami.bankstate.NyamiBankStatePlugin
