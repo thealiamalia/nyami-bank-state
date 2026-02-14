@@ -1,9 +1,21 @@
-.gradle
-build
+# Gradle
+.gradle/
+build/
+
+# IntelliJ/IDEA
 .idea/
+*.iml
+out/
+
+# Eclipse
+.classpath
 .project
 .settings/
-.classpath
-nbactions.xml
-nb-configuration.xml
-nbproject/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Nyami/patch backups
+*.bak_*
+*.bakname_*
