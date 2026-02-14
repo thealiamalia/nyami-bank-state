@@ -1,55 +1,29 @@
 package com.nyami.bankstate;
 
-
-
-
-
 import net.runelite.client.config.Config;
-
-
 import net.runelite.client.config.ConfigGroup;
-
-
 import net.runelite.client.config.ConfigItem;
 
-
-
-
-
-@ConfigGroup("${plugin_config_group}")
-
-
+@ConfigGroup("exposebankstate")
 public interface NyamiBankStateConfig extends Config
-
-
 {
+    @ConfigItem(
+            keyName = "enableHttp",
+            name = "Enable HTTP server",
+            description = "Expose bank open/closed state over HTTP on localhost"
+    )
+    default boolean enableHttp()
+    {
+        return true;
+    }
 
-
-	@ConfigItem(
-
-
-		keyName = "greeting",
-
-
-		name = "Welcome Greeting",
-
-
-		description = "The message to show to the user when they login"
-
-
-	)
-
-
-	default String greeting()
-
-
-	{
-
-
-		return "Hello";
-
-
-	}
-
-
+    @ConfigItem(
+            keyName = "port",
+            name = "HTTP port",
+            description = "Localhost port to bind (127.0.0.1). Example: 8337"
+    )
+    default int port()
+    {
+        return 8337;
+    }
 }
