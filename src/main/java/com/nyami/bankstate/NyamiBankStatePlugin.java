@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import net.runelite.api.Client;
 import net.runelite.api.widgets.Widget;
-import net.runelite.api.widgets.WidgetInfo;
+import net.runelite.api.widgets.ComponentID;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.plugins.Plugin;
@@ -32,9 +32,10 @@ import net.runelite.client.eventbus.Subscribe;
 )
 public class NyamiBankStatePlugin extends Plugin
 {
-    private static final Gson GSON = new Gson();
 
     @Inject
+    private Gson gson;
+@Inject
     private Client client;
 
     @Inject
@@ -84,7 +85,7 @@ public class NyamiBankStatePlugin extends Plugin
     {
         try
         {
-            Widget bankContainer = client.getWidget(WidgetInfo.BANK_CONTAINER);
+            Widget bankContainer = client.getWidget(ComponentID.BANK_CONTAINER);
             bankOpen = bankContainer != null && !bankContainer.isHidden();
         }
         catch (Exception ex)
@@ -123,7 +124,7 @@ public class NyamiBankStatePlugin extends Plugin
                     Map<String, Object> payload = new HashMap<>();
                     payload.put("bankOpen", bankOpen);
 
-                    byte[] body = GSON.toJson(payload).getBytes(StandardCharsets.UTF_8);
+                    byte[] body = gson.toJson(payload).getBytes(StandardCharsets.UTF_8);
                     ex.getResponseHeaders().set("Content-Type", "application/json; charset=utf-8");
                     ex.getResponseHeaders().set("Cache-Control", "no-store");
                     ex.sendResponseHeaders(200, body.length);
