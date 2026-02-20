@@ -1,4 +1,4 @@
-package com.nyami.bankstate;
+package com.thealiamalia.exposebankstate;
 
 
 
@@ -13,7 +13,7 @@ import net.runelite.client.externalplugins.ExternalPluginManager;
 
 
 
-public class NyamiBankStatePluginTest
+public class ExposeBankStatePluginTest
 
 
 {
@@ -25,7 +25,7 @@ public class NyamiBankStatePluginTest
 	{
 
 
-		ExternalPluginManager.loadBuiltin(NyamiBankStatePlugin.class);
+		ExternalPluginManager.loadBuiltin(ExposeBankStatePlugin.class);
 
 
 		RuneLite.main(args);

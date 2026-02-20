@@ -1,21 +1,11 @@
-# Gradle
 .gradle/
-build/
-
-# IntelliJ/IDEA
 .idea/
-*.iml
+build/
 out/
-
-# Eclipse
-.classpath
-.project
-.settings/
-
-# OS junk
+*.iml
+_gradle*/
+*.log
 .DS_Store
-Thumbs.db
 
-# Nyami/patch backups
-*.bak_*
-*.bakname_*
+tools/
+
