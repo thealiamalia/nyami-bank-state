@@ -1,4 +1,4 @@
-﻿package com.thealiamalia.exposebankstate;
+package com.thealiamalia.exposebankstate;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
